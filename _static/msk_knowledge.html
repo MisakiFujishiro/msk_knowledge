@@ -1,13 +1,26 @@
-# MSK
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"># MSK
 
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
   <img src="img/amazon-msk.png" style="width: 70%;">
 </div>
-
----
-## MSKの概要
-----
-### Topic/Partition
+</script></section><section ><section data-markdown><script type="text/template">## MSKの概要</script></section><section data-markdown><script type="text/template">### Topic/Partition
 <div style="font-size: 0.8em;">
     <p>
         生成されたメッセージはKafkaのTopicに送信される<br>
@@ -20,11 +33,7 @@
   <img src="img/Msk-3.jpg" style="width: 70%;">
 </div>
 
-
----
-## MSKの型
-----
-### ストリームデータ型
+</script></section></section><section ><section data-markdown><script type="text/template">## MSKの型</script></section><section data-markdown><script type="text/template">### ストリームデータ型
 <div style="font-size: 0.8em;">
     <p>
         ストリームデータは大規模かつ連続的に生成され、<br>
@@ -37,9 +46,7 @@
   <img src="img/Msk-4.jpg" style="width: 70%;">
 </div>
 
-
-----
-### Pub-Sub
+</script></section><section data-markdown><script type="text/template">### Pub-Sub
 <div style="font-size: 0.8em;">
     <p>
         Producerが生成したデータを<br>
@@ -51,9 +58,7 @@
   <img src="img/Msk-5.jpg" style="width: 70%;">
 </div>
 
-
-----
-### Pull型
+</script></section><section data-markdown><script type="text/template">### Pull型
 
 <div style="font-size: 0.8em;">
     <p>
@@ -65,9 +70,7 @@
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
   <img src="img/Msk-6.jpg" style="width: 70%;">
 </div>
-
-----
-### まとめ
+</script></section><section data-markdown><script type="text/template">### まとめ
 <div style="font-size: 0.8em;">
     <p>
         連続したリアルタイムデータであるストリームデータを扱い、<br>
@@ -82,11 +85,7 @@
 
 
 
-
----
-## Consumerグループ
-----
-### Pub-Subモデルの実現
+</script></section></section><section ><section data-markdown><script type="text/template">## Consumerグループ</script></section><section data-markdown><script type="text/template">### Pub-Subモデルの実現
 <div style="font-size: 0.8em;">
     <p>
         Pub-Subモデルを実現するために、Consumer側で所属するConsumer-Groupを定義する<br>
@@ -101,11 +100,7 @@
 
 
 
-
----
-## offset
-----
-### ストリーム型データの扱い
+</script></section></section><section ><section data-markdown><script type="text/template">## offset</script></section><section data-markdown><script type="text/template">### ストリーム型データの扱い
 <div style="font-size: 0.8em;">
     <p>
         ストリーム型のデータの処理順序を担保するため<br>
@@ -117,9 +112,7 @@
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
   <img src="img/Msk-9.jpg" style="width: 70%;">
 </div>
-
-----
-### offsetの種類
+</script></section><section data-markdown><script type="text/template">### offsetの種類
 <div style="font-size: 0.8em;">
     <p>
         Log-End-Offset:partitionの末尾のメッセージの番号<br>
@@ -132,9 +125,7 @@
   <img src="img/Msk-10.jpg" style="width: 70%;">
 </div>
 
-
-----
-### 正常処理時のoffset
+</script></section><section data-markdown><script type="text/template">### 正常処理時のoffset
 <div style="font-size: 0.8em;">
     <p>
         consumerはcommit-offsetを確認<br>
@@ -147,9 +138,7 @@
   <img src="img/Msk-11.jpg" style="width: 70%;">
 </div>
 
-
-----
-### 処理失敗時のoffset
+</script></section><section data-markdown><script type="text/template">### 処理失敗時のoffset
 <div style="font-size: 0.8em;">
     <p>
         後続メッセージを取得して処理中に失敗した場合、<br>
@@ -166,11 +155,7 @@
 
 
 
-
----
-## offsetの管理
-----
-### __consumer_offsets
+</script></section></section><section ><section data-markdown><script type="text/template">## offsetの管理</script></section><section data-markdown><script type="text/template">### __consumer_offsets
 <div style="font-size: 0.8em;">
     <p>
         各トピック、各consumer-gruoupごとのcommit-offsetが<br>
@@ -183,9 +168,7 @@
 </div>
 
 
-
-----
-### __consumer_offsetsの削除ポリシー
+</script></section><section data-markdown><script type="text/template">### __consumer_offsetsの削除ポリシー
 <div style="font-size: 0.6em;">
     <p>
         consumerGroupが活動しない期間が長いと、__consumer_offsetsの情報を削除する<br>
@@ -198,9 +181,7 @@
   <img src="img/Msk-14.jpg" style="width: 70%;">
 </div>
 
-
-----
-### auto-offset-reset
+</script></section><section data-markdown><script type="text/template">### auto-offset-reset
 <div style="font-size: 0.6em;">
     <p>
         consumerが既存のoffsetを見つけられない場合どのメッセージから消費するかの設定<br>
@@ -213,9 +194,7 @@
   <img src="img/Msk-15.jpg" style="width: 70%;">
 </div>
 
-
-----
-### Lagについて
+</script></section><section data-markdown><script type="text/template">### Lagについて
 <div style="font-size: 0.6em;">
     <p>
         Topic単位で未処理データ数をLog-End-Offsetとcommit-offsetの差の和をとった<br>
@@ -227,3 +206,56 @@
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
   <img src="img/Msk-16.jpg" style="width: 70%;">
 </div>
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
