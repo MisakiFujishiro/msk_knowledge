@@ -115,7 +115,7 @@
 </div>
 
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
-  <img src="img/Msk-9.jpg" style="width: 70%;">
+  <img src="img/Msk-9.jpg" style="width: 50%;">
 </div>
 
 ----
@@ -160,7 +160,7 @@
 </div>
 
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
-  <img src="img/Msk-12.jpg" style="width: 70%;">
+  <img src="img/Msk-12.jpg" style="width: 50%;">
 </div>
 
 
@@ -200,18 +200,33 @@
 
 
 ----
-### auto-offset-reset
+### auto-offset-reset:latest
 <div style="font-size: 0.6em;">
     <p>
         consumerが既存のoffsetを見つけられない場合どのメッセージから消費するかの設定<br>
-        earliest:トピックの最初のメッセージから消費する<br>
-        latest:最新のoffsetからメッセージを処理、新しく到着するメッセージのみを消費する
+        latest:最新のoffsetからメッセージを処理、新しく到着するメッセージのみを消費する<br>
+        破棄されてから、Consumerが起動されるまでに投入されたデータは処理されない
     </p>
 </div>
 
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
   <img src="img/Msk-15.jpg" style="width: 70%;">
 </div>
+
+----
+### auto-offset-reset:earliest
+<div style="font-size: 0.6em;">
+    <p>
+        consumerが既存のoffsetを見つけられない場合どのメッセージから消費するかの設定<br>
+        earliest:トピックの最初のメッセージから消費する<br>
+        破棄されてから、consumerが起動すると、全ての処理が再実行される
+    </p>
+</div>
+
+<div style="display: flex; justify-content: space-around;margin-top: -20px;">
+  <img src="img/Msk-16.jpg" style="width: 70%;">
+</div>
+
 
 
 ----
@@ -225,5 +240,5 @@
 </div>
 
 <div style="display: flex; justify-content: space-around;margin-top: -20px;">
-  <img src="img/Msk-16.jpg" style="width: 70%;">
+  <img src="img/Msk-17.jpg" style="width: 70%;">
 </div>
